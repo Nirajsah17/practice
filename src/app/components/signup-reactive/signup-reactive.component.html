@@ -1,0 +1,14 @@
+<form [formGroup]="signupForm" (ngSubmit)="signupFormHandler()">
+  <input type="text" placeholder="name" formControlName="name" />
+    <!-- Use 'required' and 'minlength' as error keys -->
+    <span *ngIf="hasError('name', 'required')">Username is required</span>
+    <span *ngIf="hasError('name', 'minlength')">Must be at least 5 characters</span>
+
+  <input type="text" placeholder="email" formControlName="email" />
+  <input type="text" placeholder="password" formControlName="password" />
+  <input type="text" placeholder="confirm password" formControlName="confirmPassword" />
+
+  <button type="submit" [disabled]="signupForm.invalid">Submit</button>
+
+  <pre>{{ signupForm.value | json }}</pre>
+</form>
