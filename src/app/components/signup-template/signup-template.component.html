@@ -1,0 +1,10 @@
+{{signUp.value | json}}
+
+<form #signUp="ngForm" (ngSubmit)="onSignUp(signUp)" >
+  <input type="text" name="name" #name="ngModel" placeholder="name" ngModel required/>
+    <span *ngIf="name.invalid && name.touched" style="background-color: red;">error in name</span>
+  <input type="email" name="email" #email="ngModel" placeholder="email" ngModel required/>
+  <input type="password" name="password" #password="ngModel" placeholder="password" ngModel required/>
+  <input type="password" name="confirmPassword" #confirmPassword="ngModel" placeholder="confirm password" ngModel required/>
+  <button type="submit" [disabled]="signUp.invalid">Signup</button>
+</form>

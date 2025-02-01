@@ -1,0 +1,5 @@
+<button (click)="updateCount()">Count</button>
+
+<app-child [count]="count" (message)="receiveMessage($event)"></app-child>
+
+<p>Message form Child : {{msg}}</p>
